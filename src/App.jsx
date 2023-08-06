@@ -1,14 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Home from './pages/home/Home';
+import Cities from './pages/cities/Cities';
+import CitiesDetail from './pages/citiesDetail/CitiesDetail';
+import SignIn from './pages/signIn/SignIn';
 
 function App() {
   
   return (
-  <div className='app-layout'>
-  <header className='app-header'>Header</header>
-  <main className='app-main'>Main</main>
-  <footer className='app-footer'>Footer</footer>
-  </div>
+    <>
+  <Home />
+  <Cities />
+  <CitiesDetail />
+  <SignIn />
+  </>
   );
 }
 
