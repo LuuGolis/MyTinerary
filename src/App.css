@@ -7,15 +7,13 @@
 
 .app-header{
   height: 20vh;
-  background-color: palevioletred;
+  
 }
 
 .app-main{
-  height:70vh;
-  background-color: fuchsia;
+  height:7
 }
 
 .app-footer{
-  height:10vh;
-  background-color: blueviolet;
+  height:10vh
 }
