@@ -1,29 +1,29 @@
 import React from 'react'
 
 function Carousel() {
+  const prev = () => {
+
+  }
+
+  const next = () => {
+
+  }
+
   return (
-    <div className='CarouselContainer "col-8 col-sm-6 col-lg-4"'>
-        <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-  <div className="carousel-inner">
-    <div className="carousel-item active">
-      <img  src="..\public\newyork.jpg" className="d-block w-100" alt="..." />
-    </div>
-    <div className="carousel-item">
-      <img src="..\public\1561977573130.jpg"  className="d-block w-100" alt="..." />
-    </div>
-    <div className="carousel-item">
-      <img src="..\public\singapore"  className="d-block w-100" alt="..." />
-    </div>
-  </div>
-  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
-  </button>
-</div>
+    <div className='carousel container d-flex inline-block col-6'>
+       <button onClick={prev}>{'<'}</button>
+
+       <div className='img-container d-inline-block'>
+       <div className='row mb-3'>
+        <img className="col-6"   src="public\newyork.jpg" alt="" />
+        <img className="col-6"   src="public\seoul.jpg" alt="" />
+        </div>
+        <div className='row'>
+        <img className="col-6" src="public\singapore.jpg" alt="" />
+        <img className="col-6" src="public\1561977573130.jpg" alt="" />
+        </div>
+       </div>
+       <button onClick={next}>{'>'}</button>
 
     </div>
   )
