@@ -39,7 +39,7 @@ const cityImg = [
   },
   {
     'url': 'https://images.unsplash.com/photo-1557927852-0a71924e72c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-    'caption': 'Garden of the Blue Lagoon, Portugal'
+    'caption': 'Blue Lagoon, Portugal'
   }]
   const cityImg3 = [
   {
@@ -70,7 +70,7 @@ const Carousel = () => {
   useEffect(() => {
     let intervalID = setInterval(() => {
       next()
-    }, 1000)
+    }, 2000)
 
     return () => {
       clearInterval(intervalID)
@@ -94,37 +94,39 @@ const Carousel = () => {
     }
 
   }
- const SplitArrays = () =>{
-  const chunkSize =4;
-  const chunkedArrays =[];
-  for(let i = 0; i<cityImg.length;i +=chunkSize){
-    chunkedArrays.push(cityImg.slice(i,i + chunkSize));
-  }
- }
+ 
+ 
   return (
-    <div className='carousel container d-flex inline-block col-6'>
-      <button onClick={prev}>{'<'}</button>
+    <div className='popular row d-flex justify-content-center m-4'>
+      <h2 className='m-4 text-center '>Popular MyTineraries!</h2>
+    <div className='carouselContainer d-flex inline-block   col-12 '>
+      <div className="button position-relative col-1" onClick={prev}><img className="position-absolute top-50 start-50" src='public\prev1.png' alt=""/></div>
 
-      <div className='img-container d-inline-block'>
+      <div className='img-container mx-5'>
 
-        <div>
-          <img className="col-6 carouselImg" src={cityImg[count].url} alt="" />{cityImg[count].caption}
-          <img className="col-6 carouselImg" src={cityImg1[count].url} alt="" />{cityImg[count].caption}
-          <img className="col-6 carouselImg" src={cityImg2[count].url} alt="" />{cityImg[count].caption}
-          <img className="col-6 carouselImg" src={cityImg3[count].url} alt="" />{cityImg[count].caption}
-        </div>
-
-
+        
+          <div className='row d-inline-flex flex-wrap mx-5 justify-content-center'>
+          <div className='imgSlide col-5'><img className="carouselImg img-fluid " src={cityImg[count].url} alt="" /><p className='imgCaption'>{cityImg[count].caption}</p></div>
+          <div className='imgSlide col-5'><img className="carouselImg img-fluid" src={cityImg1[count].url} alt="" /><p className='imgCaption'>{cityImg1[count].caption}</p></div>
+          </div>
+          <div className='row d-inline-flex flex-wrap mx-5 justify-content-center'>
+          <div className='imgSlide col-5'><img className="carouselImg img-fluid" src={cityImg2[count].url} alt="" /><p className='imgCaption'>{cityImg2[count].caption}</p></div>
+         <div className='imgSlide col-5'> <img className="carouselImg img-fluid" src={cityImg3[count].url} alt="" /><p className='imgCaption'>{cityImg3[count].caption}</p></div>
+        
+</div>
       </div>
+      <div className="button position-relative col-1" onClick={next}><img className="position-absolute top-50 start-25" src='public\next1.png' alt=""/></div>
       {
         cityImg.map((item, countMap) => {
-          if (countMap === count) return <span key={countMap} className='cursor-pointer'>⚫</span>
+          if (countMap === count) return 
+          <div className='bullet'>
+          <span key={countMap} className='cursor-pointer'>⚫</span>
           else return <span key={countMap} className='cursor-pointer' onClick={() => setBullet(countMap)}>⚪</span>
+          </div>
         })
       }
 
-      <button onClick={next}>{'>'}</button>
-
+    </div>
     </div>
   )
 }

@@ -2,7 +2,7 @@
 const navbarMain = () => {
     return (
       
-      <div className="d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4">
+      <div className="d-flex flex-wrap align-items-center justify-content-md-between py-1 mb-2">
       <nav>
         <img src="public\mytinerarylogo.png" width="200px" height="61px"/>
         <a href="#" className="mx-2">Home</a>

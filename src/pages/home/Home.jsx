@@ -10,10 +10,10 @@ const Home = () => {
         <NavbarMain />
         </header>
         <main className="app-main">
-        <section className="d-flex mb-5">
+        <section className="d-flex">
         <Hero/>
     </section>
-    <section className="mb-5">
+    <section className="mb-5 d-flex justify-content-center">
     <Carousel />
     </section>
         </main>
