@@ -1,7 +1,7 @@
 
 const Cities = () => {
   return (
-    <div>Cities</div>
+    <div></div>
   )
 }
 
