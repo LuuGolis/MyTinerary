@@ -100,22 +100,22 @@ const Carousel = () => {
     <div className='popular row d-flex justify-content-center m-4'>
       <h2 className='m-4 text-center '>Popular MyTineraries!</h2>
     <div className='carouselContainer d-flex inline-block   col-12 '>
-      <div className="button position-relative col-1" onClick={prev}><img className="position-absolute top-50 start-50" src='public\prev1.png' alt=""/></div>
+      <div className="button position-relative col-1" onClick={prev}><img className="btnImg position-absolute top-50 start-50 img-fluid" src='public\prev1.png' alt=""/></div>
 
       <div className='img-container mx-5'>
 
         
           <div className='row d-inline-flex flex-wrap mx-5 justify-content-center'>
-          <div className='imgSlide col-5'><img className="carouselImg img-fluid " src={cityImg[count].url} alt="" /><p className='imgCaption'>{cityImg[count].caption}</p></div>
-          <div className='imgSlide col-5'><img className="carouselImg img-fluid" src={cityImg1[count].url} alt="" /><p className='imgCaption'>{cityImg1[count].caption}</p></div>
+          <div className='imgSlide col-lg-5 col-md-5 col-sm-10 col-xs-10'><img className="carouselImg  img-fluid" src={cityImg[count].url} alt="" /><p className='imgCaption text-wrap'>{cityImg[count].caption}</p></div>
+          <div className='imgSlide col-lg-5 col-md-5 col-sm-10 col-xs-10'><img className="carouselImg img-fluid" src={cityImg1[count].url} alt="" /><p className='imgCaption text-wrap'>{cityImg1[count].caption}</p></div>
           </div>
           <div className='row d-inline-flex flex-wrap mx-5 justify-content-center'>
-          <div className='imgSlide col-5'><img className="carouselImg img-fluid" src={cityImg2[count].url} alt="" /><p className='imgCaption'>{cityImg2[count].caption}</p></div>
-         <div className='imgSlide col-5'> <img className="carouselImg img-fluid" src={cityImg3[count].url} alt="" /><p className='imgCaption'>{cityImg3[count].caption}</p></div>
+          <div className='imgSlide col-lg-5  col-md-5col-sm-10  col-xs-10'><img className="carouselImg img-fluid" src={cityImg2[count].url} alt="" /><p className='imgCaption text-wrap'>{cityImg2[count].caption}</p></div>
+         <div className='imgSlide col-lg-5 col-md-5 col-sm-10 col-xs-10'> <img className="carouselImg img-fluid" src={cityImg3[count].url} alt="" /><p className='imgCaption text-wrap'>{cityImg3[count].caption}</p></div>
         
 </div>
       </div>
-      <div className="button position-relative col-1" onClick={next}><img className="position-absolute top-50 start-25" src='public\next1.png' alt=""/></div>
+      <div className="button position-relative col-1" onClick={next}><img className="btnImg position-absolute top-50 start-25 img-fluid" src='public\next1.png' alt=""/></div>
 
     </div>
     </div>
