@@ -1,16 +1,9 @@
-
+html, body { height: 100% }
 .app-layout{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.app-header{
-  height: 20vh;
-  
-}
 
-.app-main{
-  height:70vh;
-}
 

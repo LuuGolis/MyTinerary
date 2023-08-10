@@ -17,7 +17,9 @@ const Home = () => {
     <Carousel />
     </section>
         </main>
+        <footer className="app-footer">
         <Footer/>
+        </footer>
     </div>
   )
 }

@@ -1,4 +1,7 @@
 .footerContainer{
     background-color: #808B96;
-    padding-top: 20%;
+    position:sticky;
+    left:0;
+    bottom:0;
+    right:0;
 }
