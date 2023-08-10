@@ -116,15 +116,6 @@ const Carousel = () => {
 </div>
       </div>
       <div className="button position-relative col-1" onClick={next}><img className="position-absolute top-50 start-25" src='public\next1.png' alt=""/></div>
-      {
-        cityImg.map((item, countMap) => {
-          if (countMap === count) return 
-          <div className='bullet'>
-          <span key={countMap} className='cursor-pointer'>⚫</span>
-          else return <span key={countMap} className='cursor-pointer' onClick={() => setBullet(countMap)}>⚪</span>
-          </div>
-        })
-      }
 
     </div>
     </div>
