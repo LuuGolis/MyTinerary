@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react"
-import Footer from "../../components/Footer/Footer"
-import NavbarMain from "../../components/Navbar/NavbarMain"
 import { useParams } from "react-router-dom"
 import axios from "axios"
 import Card from "../../components/Card/Card"
+import Footer from "../../components/Footer/Footer"
+import NavbarMain from "../../components/Navbar/NavbarMain"
 import { getAllCities } from "../../../service/cityService.js"
 
 const Cities = () => {
   const params = useParams()
 
 const [cities, setCities] = useState([])
-const searchInput = useRef( null)
+const searchInput = useRef(null)
+
 
 useEffect(() =>{
 axios('http://localhost:3000/api/cities')
