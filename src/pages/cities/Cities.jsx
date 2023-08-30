@@ -14,9 +14,7 @@ const searchInput = useRef(null)
 
 
 useEffect(() =>{
-axios('http://localhost:3000/api/cities')
-.then(res => setCities(res.data.response))
-//getAllCities().then(setCities);
+getAllCities().then(setCities).catch(error => console.log(error));
 }, [])
 
 const handleSearch = ()=>{
@@ -54,7 +52,7 @@ const handleSearch = ()=>{
 
         <div className="row container ">
         {
-  cities.map(city => <Card key={city._id} data={city} /> )
+  cities.map((city) => <Card key={city._id} data={city} /> )
 }
    
         </div>
