@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
 import { useParams } from "react-router-dom"
-import axios from "axios"
 import Card from "../../components/Card/Card"
 import Footer from "../../components/Footer/Footer"
 import NavbarMain from "../../components/Navbar/NavbarMain"
 import { getAllCities } from "../../../service/cityService.js"
+import { useDispatch } from "react-redux"
 
 const Cities = () => {
   const params = useParams()
