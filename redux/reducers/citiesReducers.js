@@ -15,8 +15,14 @@ newState.filteredCities = action.payload.cities
 
 return newState
 }).addCase( filterCities, ( actualState, action) =>{
+   const filteredSearch = actualState.allCities.filter(city => 
+        city.name.toLowerCase()
+        .includes(action.payload.input))
+
+        let newFilteredCities = filteredSearch
     return {
-        ...actualState
+        ...actualState,
+        filteredCities: newFilteredCities
     }
 }
 

@@ -4,29 +4,35 @@ import Card from "../../components/Card/Card"
 import Footer from "../../components/Footer/Footer"
 import NavbarMain from "../../components/Navbar/NavbarMain"
 import { getAllCities } from "../../../service/cityService.js"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { loadCities, filterCities } from '../../../redux/actions/citiesActions.js'
 
 const Cities = () => {
   const params = useParams()
 
-const [cities, setCities] = useState([])
+//const [cities, setCities] = useState([])
 const searchInput = useRef(null)
-
+const citiesStore = useSelector(store => store.cities)
+console.log('store: ',citiesStore);
+const dispatch = useDispatch()
 
 useEffect(() =>{
-getAllCities().then(setCities).catch(error => console.log(error));
+getAllCities().then((cities) => {
+  //setCities(cities); 
+  dispatch(loadCities(cities));
+})
 }, [])
 
 const handleSearch = ()=>{
 
-  const search = searchInput.current.value;
-   let query =   `?`
+ 
+ /*  let query =   `?`
    if(search){
     query+="name="+search
    }
    console.log(query);
-   getAllCities(query).then(setCities)
-}
+   //getAllCities(query).then(/*setCities)*/
+   dispatch(filterCities( searchInput.current.value))}
 
   return (
     <div className="app-layout">
@@ -52,7 +58,7 @@ const handleSearch = ()=>{
 
         <div className="row container ">
         {
-  cities.map((city) => <Card key={city._id} data={city} /> )
+  citiesStore.filteredCities.map((city) => <Card key={city._id} data={city} /> )
 }
    
         </div>

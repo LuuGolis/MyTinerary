@@ -8,8 +8,10 @@ export const loadCities = createAction( 'load_cities', (cities) =>{
 }
 })
 
-export const filterCities = createAction('filter_cities', (algo) =>{
+export const filterCities = createAction('filter_cities', (search) =>{
     return {
-        payload: algo
+        payload: {
+            input: search
+        }
     }
 })
