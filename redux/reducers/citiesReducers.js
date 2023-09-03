@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { loadCities, filterCities } from "../actions/citiesActions";
+import { loadCities, filterCities, loadCitiesAsync } from "../actions/citiesActions";
 
 const initialState = {
     allCities: [],
@@ -26,5 +26,11 @@ return newState
     }
 }
 
-)
+).addCase( loadCitiesAsync.fulfilled,( actualState, action) =>{
+    return {
+        ...actualState,
+        allCities: action.payload,
+        filteredCities: action.payload
+    }
+})
 )

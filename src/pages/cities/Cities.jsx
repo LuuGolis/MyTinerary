@@ -5,21 +5,24 @@ import Footer from "../../components/Footer/Footer"
 import NavbarMain from "../../components/Navbar/NavbarMain"
 import { getAllCities } from "../../../service/cityService.js"
 import { useDispatch, useSelector } from "react-redux"
-import { loadCities, filterCities } from '../../../redux/actions/citiesActions.js'
+import { loadCities, filterCities, loadCitiesAsync } from '../../../redux/actions/citiesActions.js'
 
 const Cities = () => {
   const params = useParams()
 
 //const [cities, setCities] = useState([])
 const searchInput = useRef(null)
-const citiesStore = useSelector(store => store.cities)
-console.log('store: ',citiesStore);
+
 const dispatch = useDispatch()
+
+const citiesStore = useSelector( store => store.cities.filteredCities)
+console.log(citiesStore);
 
 useEffect(() =>{
 getAllCities().then((cities) => {
-  //setCities(cities); 
-  dispatch(loadCities(cities));
+  dispatch(loadCitiesAsync());
+  //getAllCities().then((cities) => {
+    //setCities(cities); 
 })
 }, [])
 
@@ -58,7 +61,7 @@ const handleSearch = ()=>{
 
         <div className="row container ">
         {
-  citiesStore.filteredCities.map((city) => <Card key={city._id} data={city} /> )
+  citiesStore.map((city) => <Card key={city._id} data={city} /> )
 }
    
         </div>
