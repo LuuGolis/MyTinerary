@@ -4,6 +4,7 @@ import './App.css';
 import Home from './pages/home/Home';
 import Cities from './pages/cities/Cities';
 import CitiesDetail from './pages/citiesDetail/CitiesDetail';
+import Itineraries from './pages/itineraries/Itineraries'
 import SignIn from './pages/signIn/SignIn';
 import './components/Footer/footer.css'
 import './components/Carousel/carousel.css'
@@ -17,6 +18,7 @@ function App() {
     <Route path="/" element={<Home />} />
    <Route path="/cities" element={<Cities />} />
    <Route path="/cities/:id" element={<CitiesDetail />} />
+   <Route path="/itineraries" element={<Itineraries />} />
    <Route path="/signIn" element={<SignIn />} />
   </Routes>
   </>
