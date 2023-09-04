@@ -14,13 +14,13 @@ useEffect( () => {
 
   return (
     <div className='container'>
-    <div className="accordion accordion-flush" id="accordionFlushExample">
+    
         { itinerariesStore.map( itinerary => 
         <ItineraryAccordion key={itinerary._id} data={itinerary} />
             
             )}
             </div>
-    </div>
+   
   )
 }
 
