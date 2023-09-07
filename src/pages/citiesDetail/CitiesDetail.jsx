@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { loadCityAsync } from "../../../redux/actions/citiesActions"
+import { Link } from 'react-router-dom'
 
 const CitiesDetail = () => {
   const { id } = useParams();
@@ -23,14 +24,23 @@ const CitiesDetail = () => {
       <div className="row container">
       <div className="px-4 py-5 my-5 text-center">
     {city ? <h1 className="display-5 fw-bold text-body-emphasis">{city.name}</h1> : <h2> cargando</h2>}
-    <div className="col-lg-6 mx-auto">
-      <p className="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-      <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" className="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-      </div>
+ {/*       <div className="col-lg-6 mx-auto">
+    <div className="card">
+  <div className="card-body">
+    <h5 className="card-title">{city.name}</h5>
+    <p className="card-text">{city.country}</p>
+    <p className="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+  <img class="card-img-bottom" src={city.img} alt="Card image cap"/>
+</div>
+<Link to={"/cities"} className="btn btn-dark">Go back</Link>
+    </div> 
     </div>
   </div>
-    </div>
+ */}
+ <Link to={"/cities"} className="btn btn-dark">Go back</Link>
+ </div>
+ </div>
     </main>
     </div>
         )
