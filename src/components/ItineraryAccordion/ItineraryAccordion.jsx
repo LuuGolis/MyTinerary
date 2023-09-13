@@ -1,5 +1,5 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function ItineraryAccordion({ data }) {
 
@@ -14,7 +14,7 @@ function ItineraryAccordion({ data }) {
       userName,
       userImg     
     } = data
-    console.log(data);
+
   return (
  
     <div className='container'>

@@ -1,33 +1,43 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { loadCities, filterCities, loadCitiesAsync, loadCityAsync } from "../actions/citiesActions";
+import { loadCitiesAsync, filterCities, loadCityAsync } from "../actions/citiesActions.js";
 
 const initialState = {
     allCities: [],
     filteredCities: [],
-    city: null
+    itinerary: [],
+    city: {}
 }
 
 export const citiesReducers = createReducer(initialState, (builder) =>
-    builder.addCase(loadCities, (actualState, action) => {
-        const newState = { ...actualState }
+   /*  builder.addCase(loadCities, (actualState, action) => {
+        return {
+            ...actualState,
+            allCities: action.payload,
+            filteredCities: action.payload
+        }
+    }).addCase(loadCity, (actualState, action) => {
+        const city = actualState.allCities.filter(city => city._id === action.payload._id)
+        const newCity = city
 
-        newState.allCities = action.payload.cities
-        newState.filteredCities = action.payload.cities
-
-        return newState
+        return {
+            ...actualState,
+            city: newCity
+        }
     }).addCase(filterCities, (actualState, action) => {
         const filteredSearch = actualState.allCities.filter(city =>
             city.name.toLowerCase()
                 .includes(action.payload.input))
 
         let newFilteredCities = filteredSearch
+
         return {
             ...actualState,
             filteredCities: newFilteredCities
         }
-    }
 
-    ).addCase(loadCitiesAsync.fulfilled, (actualState, action) => {
+    }
+ 
+    )*/ builder.addCase(loadCitiesAsync.fulfilled, (actualState, action) => {
         return {
             ...actualState,
             allCities: action.payload,
@@ -38,6 +48,16 @@ export const citiesReducers = createReducer(initialState, (builder) =>
             ...actualState,
             city: action.payload
         }
-    })
+    }).addCase(filterCities, (actualState, action) => {
+        const filteredSearch = actualState.allCities.filter(city =>
+            city.name.toLowerCase()
+                .includes(action.payload.input))
 
+        let newFilteredCities = filteredSearch
+
+        return {
+            ...actualState,
+            filteredCities: newFilteredCities
+        }})
+ 
 )
