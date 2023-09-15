@@ -9,10 +9,22 @@ import SignUp from './pages/signUp/SignUp';
 import SignIn from './pages/signIn/SignIn';
 import './components/Footer/footer.css'
 import './components/Carousel/carousel.css'
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { signInToken } from '../redux/actions/userAction';
 
 
 function App() {
-  
+  const dispatch = useDispatch()
+
+  useEffect(() =>{
+    const token = localStorage.getItem('token')
+    if(token){
+    dispatch(signInToken())
+  }
+  }, [])
+
+
   return (
     <>
     <Routes>

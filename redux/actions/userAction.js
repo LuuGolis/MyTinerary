@@ -51,3 +51,10 @@ export const signInToken = createAsyncThunk("log_token", async (body) => {
         console.log(error);
     }
 })
+
+export const logOut = createAction("reset", () =>{
+    localStorage.removeItem('token')
+    return{
+        payload: null
+    }
+})
