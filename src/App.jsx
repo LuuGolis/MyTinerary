@@ -6,7 +6,7 @@ import Cities from './pages/cities/Cities';
 import CitiesDetail from './pages/citiesDetail/CitiesDetail';
 import Itineraries from './pages/itineraries/Itineraries'
 import SignUp from './pages/signUp/SignUp';
-import LogIn from './pages/logIn/LogIn';
+import SignIn from './pages/signIn/SignIn';
 import './components/Footer/footer.css'
 import './components/Carousel/carousel.css'
 
@@ -21,7 +21,7 @@ function App() {
    <Route path="/cities/:id" element={<CitiesDetail />} />
    <Route path="/itineraries/city/:id" element={<Itineraries />} />
    <Route path="/signup" element={<SignUp />} />
-   <Route path="/login" element={<LogIn />} />
+   <Route path="/signin" element={<SignIn />} />
   </Routes>
   </>
 
