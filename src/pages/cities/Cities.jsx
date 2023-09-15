@@ -35,7 +35,7 @@ const handleSearch = ()=>{
    }
    console.log(query);
    //getAllCities(query).then(/*setCities)*/
-   dispatch(filterCities( searchInput.current.value))}
+   dispatch(filterCities( searchInput.current.value.toLowerCase()))}
 
   return (
     <div className="app-layout">

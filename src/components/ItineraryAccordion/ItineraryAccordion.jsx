@@ -18,17 +18,17 @@ function ItineraryAccordion({ data }) {
   return (
  
     <div className='container'>
-         <div id="accordion">
-  <div className="card">
-    <div className="card-header" id="headingOne">
-      <h5 className="mb-0">
-        <button className="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <div className="accordion">
+  <div className="accordion-item">
+    
+      <h5 className="accordion-header" id="headingOne">
+        <button className="accordion-button btn btn-link" type="button" data-bs-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           {name}
         </button>
       </h5>
-    </div>
+    
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="card-body">
       <p>Duration:{duration}</p>
                 <p>Price:{price}</p>

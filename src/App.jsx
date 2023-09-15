@@ -5,7 +5,8 @@ import Home from './pages/home/Home';
 import Cities from './pages/cities/Cities';
 import CitiesDetail from './pages/citiesDetail/CitiesDetail';
 import Itineraries from './pages/itineraries/Itineraries'
-import SignIn from './pages/signIn/SignIn';
+import SignUp from './pages/signUp/SignUp';
+import LogIn from './pages/logIn/LogIn';
 import './components/Footer/footer.css'
 import './components/Carousel/carousel.css'
 
@@ -19,7 +20,8 @@ function App() {
    <Route path="/cities" element={<Cities />} />
    <Route path="/cities/:id" element={<CitiesDetail />} />
    <Route path="/itineraries/city/:id" element={<Itineraries />} />
-   <Route path="/signIn" element={<SignIn />} />
+   <Route path="/signup" element={<SignUp />} />
+   <Route path="/login" element={<LogIn />} />
   </Routes>
   </>
 

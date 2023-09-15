@@ -34,7 +34,6 @@ const CitiesDetail = () => {
                 <div className="card-body">
                   <h5 className="card-title">{cityStore.name}</h5>
                   <p className="card-text">{cityStore.country}</p>
-                  <p className="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
                 <img class="card-img-bottom" src={cityStore.img} alt="Card image cap" />
               </div>
@@ -44,13 +43,16 @@ const CitiesDetail = () => {
 
             }
             <button className="btn btn-dark" onClick={() => dispatch(loadItineraryByCity(id))}>View itinerary</button>
+           
             {
-              itineraryStore.map(itineraries => <ItineraryAccordion key={itineraries._id} data={itineraries} />)
               
+              itineraryStore.map((itineraries) => <ItineraryAccordion key={itineraries._id} data={itineraries} />)
+          
            
             }  
+            </div>
           </div>
-        </div>
+      
       </main>
     </div>
   )
